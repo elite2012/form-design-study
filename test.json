@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "input_p3A9kI": {
+      "title": "输入框",
+      "type": "string",
+      "props": {}
+    }
+  },
+  "labelWidth": 120,
+  "displayType": "row"
+}

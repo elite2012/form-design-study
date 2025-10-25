@@ -1,0 +1,55 @@
+{
+  "name": "form-render",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "package.json"
+  ],
+  "scripts": {
+    "beta": "npm publish --tag beta",
+    "build": "father-build",
+    "next": "npm publish --tag next",
+    "prepare": "npm run build",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "postpublish": "git push --tags",
+    "test:ui": "vitest --ui"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.0.2",
+    "ahooks": "^3.7.5",
+    "async-validator": "^3.5.1",
+    "classnames": "^2.3.1",
+    "color": "^3.1.2",
+    "dayjs": "^1.11.7",
+    "form-render": "^2.5.6",
+    "lodash-es": "^4.17.21",
+    "rc-color-picker": "^1.2.6",
+    "virtualizedtableforantd4": "^1.1.2",
+    "zustand": "^4.1.5"
+  },
+  "devDependencies": {
+    "deep-equal": "^2.0.3",
+    "father-build": "^1.22.5",
+    "less": "^4.4.2",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "peerDependencies": {
+    "antd": "4.x || 5.x",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "sideEffect": false
+}
